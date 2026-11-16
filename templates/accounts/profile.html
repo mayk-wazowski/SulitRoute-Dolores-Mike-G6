@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}My Profile - SulitRoute{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>My Profile</h2>
+    {% if prof.photo %}
+        <img src="{{ prof.photo.url }}" alt="Profile photo" width="120" style="border-radius: 50%;">
+    {% else %}
+        <p><em>No photo uploaded.</em></p>
+    {% endif %}
+    <table>
+        <tr><th>Username</th><td>{{ user.username }}</td></tr>
+        <tr><th>Name</th><td>{{ user.first_name }} {{ user.last_name }}</td></tr>
+        <tr><th>Email</th><td>{{ user.email }}</td></tr>
+        <tr><th>Contact number</th><td>{{ prof.contact_number|default:"Not set" }}</td></tr>
+        <tr><th>Role</th><td>{{ prof.role|title }}</td></tr>
+    </table>
+    <p><a href="{% url 'accounts:profile_edit' %}" class="btn">Edit profile</a></p>
+</div>
+{% endblock %}
