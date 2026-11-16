@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Shopper Dashboard - SulitRoute{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>Welcome, {{ user.first_name|default:user.username }}!</h2>
+    <p>This is your shopper dashboard.</p>
+</div>
+
+{# Shopping List widget will be added here during PD2 #}
+{% endblock %}

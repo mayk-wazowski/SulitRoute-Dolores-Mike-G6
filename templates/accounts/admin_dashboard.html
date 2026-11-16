@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - SulitRoute{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>Admin Dashboard</h2>
+    <p>Welcome, {{ user.first_name|default:user.username }}. You are logged in as an administrator.</p>
+    <p><a href="/admin/">Open Django admin site</a></p>
+</div>
+
+{# Grocery management widget will be added here during PD2 #}
+{% endblock %}
